@@ -1,0 +1,18 @@
+/* Estilos globales */
+@import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
+
+
+body {
+    font-family: 'Coda', sans-serif;
+    color: white;
+    background-color: black;
+}
+
+.flourish-credit {
+    display: none;
+}
+.fl-scrolly-step {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    max-width: 400px !important;
+  }
