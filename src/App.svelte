@@ -33,34 +33,34 @@
     const zoomMessageControl = L.control({ position: 'bottomright' });
 
     zoomMessageControl.onAdd = () => {
-        const div = L.DomUtil.create('div', 'zoom-message');
-        div.innerHTML = `
-            <div style="
-                background: rgba(0, 0, 0, 0.6);
-                color: white;
-                padding: 8px 12px;
-                border-radius: 5px;
-                font-size: 14px;
-                font-family: Arial, sans-serif;
-                text-align: center;
-            ">
-                <b>Zoom</b> Ctrl + Scroll
-            </div>
-        `;
-        return div;
+      const div = L.DomUtil.create('div', 'zoom-message');
+      div.innerHTML = `
+        <div style="
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 5px;
+          font-size: 14px;
+          font-family: Arial, sans-serif;
+          text-align: center;
+        ">
+          <b>Zoom</b> Ctrl + Scroll
+        </div>
+      `;
+      return div;
     };
 
     zoomMessageControl.addTo(map);
 
     map.getContainer().addEventListener('wheel', (event) => {
-        if (event.ctrlKey) {
-            event.preventDefault();
-            if (event.deltaY > 0) {
-                map.zoomOut();
-            } else {
-                map.zoomIn();
-            }
-        }
+      if (event.ctrlKey) {
+        event.preventDefault();
+      if (event.deltaY > 0) {
+        map.zoomOut();
+      } else {
+        map.zoomIn();
+      }
+    }
     });
 
     addPoints();
@@ -74,12 +74,12 @@
 
     const filteredPoints = siniestros.filter(item => {
       const horaMatch = filterValues.hora === null || item.hora.toString() === filterValues.hora.toString();
-        return (!filterValues.comuna || parseInt(item.comuna) === filterValues.comuna) &&
-          (!filterValues.mes || item.mes === filterValues.mes) &&
-          (!filterValues.dia || item.dia_semana === filterValues.dia) &&
-          horaMatch &&
-          (!filterValues.causante || item.causante === filterValues.causante) &&
-          (!filterValues.afectado || item.afectado === filterValues.afectado);
+      return (!filterValues.comuna || parseInt(item.comuna) === filterValues.comuna) &&
+        (!filterValues.mes || item.mes === filterValues.mes) &&
+        (!filterValues.dia || item.dia_semana === filterValues.dia) &&
+        horaMatch &&
+        (!filterValues.causante || item.causante === filterValues.causante) &&
+        (!filterValues.afectado || item.afectado === filterValues.afectado);
   });
 
     filteredPoints.forEach((incident) => {
@@ -188,7 +188,7 @@
     <div class="texto_container">
       <h4>
         <span style="color:red;">21,77</span> accidentes por cada 10.000 habitantes <br>
-        <span style="color:red;">0,42%</span> de los vehículos del parque automotor tuvieron un accidente <br>
+        <span style="color:red;">0,42%</span> de los vehículos del parque automotor tuvo un accidente <br>
       </h4>
     </div>
   
@@ -202,7 +202,6 @@
 
   <div id="scrolly_flourish_2">
     <div class="flourish-embed" data-src="story/2752082" data-url="https://flo.uri.sh/story/2752082/embed" data-height="100vh"></div>
-    <!-- Iteramos sobre las distintas slides del componente de Flourish -->
     {#each slides2 as slide, index2}
       <h5>
         {@html slide}
@@ -409,7 +408,6 @@
     margin: auto;
     max-width: 80%;
   }
-
   #scrolly_flourish_2 {
     margin: auto;
     max-width: 80%;
